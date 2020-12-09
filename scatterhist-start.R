@@ -4,6 +4,7 @@ plot_scatterhist <- function(x, xbreaks = 10, ybreaks = 10, ...) {
   layout(matrix(c(2, 1, 0, 3), ncol = 2), widths = c(2, 1), heights = c(1, 2))
 
   par(mar = c(3, 3, 1, 1))
+  # breakpoint
   plot(x, xlab = "", ylab = "", ...)
 
   y <- hist(x[, 1], breaks = xbreaks, plot = FALSE)
@@ -14,3 +15,4 @@ plot_scatterhist <- function(x, xbreaks = 10, ybreaks = 10, ...) {
   par(mar = c(3, 0, 1, 2))
   barplot(y$counts, col = 0, space = 0, horiz = TRUE)
 }
+
